@@ -1,3 +1,26 @@
-mat-drawer-content{
-  min-height:100vh;
+mat-drawer-content {
+  padding-top: 64px;
+  min-height: calc(100vh - 64px);
+}
+
+mat-toolbar {
+  position: fixed;
+  top: 0px;
+  z-index: 10;
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  height: 64px;
+}
+
+@media (max-width: 599px) {
+  .mat-toolbar-row,
+  .mat-toolbar-single-row {
+    height: 56px;
+  }
+  mat-drawer-content {
+    padding-top: 56px;
+    min-height: calc(100vh - 56px);
+  }
 }

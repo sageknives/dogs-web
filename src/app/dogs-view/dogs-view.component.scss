@@ -8,8 +8,10 @@
   display: block;
   overflow: hidden;
   height: 400px;
+  width:400px;
 }
 
 .breed-card-image {
-  height: 400px;
+  min-width: 100%;
+  min-height:100%;
 }
