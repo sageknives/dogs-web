@@ -1,32 +1,13 @@
 <app-layout>
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>{{breed.name}}</mat-card-title>
-      <mat-card-subtitle>detail</mat-card-subtitle>
+  <mat-card class="centered breed-card">
+    <mat-card-header color="primary">
+      <mat-card-title color="primary">{{ breed.subbreeds[0] | uppercase }} {{breed.name | uppercase}}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      content
-      <img [src]="breed.url" />
-      <button mat-button (click)="getRandomPicture()">Change Picture</button>
-
-      <!-- <div class="itinerary-picture picture-main">
-        <img [src]="itinerary.pictures[0].onGoingTripImageUrl" (error)="itinerary.pictures[0].errorHandler($event);imageError(itinerary.pictures[0])"
-          *ngIf="itinerary.pictures[0]">
-      </div>
-      <div class="component-wrapper">
-        <div class="itinerary-picture picture-alt component-item">
-          <img [src]="itinerary.pictures[1].pendingTripImageUrl" (error)="itinerary.pictures[1].errorHandler($event);imageError(itinerary.pictures[1])"
-            *ngIf="itinerary.pictures[1]">
-        </div>
-        <div class="itinerary-picture picture-alt component-item">
-          <img [src]="itinerary.pictures[2].pendingTripImageUrl" (error)="itinerary.pictures[2].errorHandler($event);imageError(itinerary.pictures[2])"
-            *ngIf="itinerary.pictures[2]">
-        </div>
-        <div class="itinerary-picture picture-alt component-item">
-          <img [src]="itinerary.pictures[3].pendingTripImageUrl" (error)="itinerary.pictures[3].errorHandler($event);imageError(itinerary.pictures[3])"
-            *ngIf="itinerary.pictures[3]">
-        </div>
-      </div> -->
+      <img class="breed-card-image" [src]="imageURL" />
     </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="getRandomPicture()">CHANGE PICTURE</button>
+    </mat-card-actions>
   </mat-card>
 </app-layout>

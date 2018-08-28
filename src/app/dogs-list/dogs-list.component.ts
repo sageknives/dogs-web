@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DogsService } from '../core/dogs.service';
+import { Breed } from '../models/breed';
 
 @Component({
   selector: 'app-dogs-list',
@@ -7,19 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DogsListComponent implements OnInit {
 
-  private breeds: any[] = [
-    {
-      id: 1,
-      name: "wolf"
-    },
-    {
-      id: 2,
-      name: "retriever"
-    }
-  ];
-  constructor() { }
+  private breeds: Breed[] = [];
+  constructor(
+    private dogService: DogsService
+  ) { }
 
   ngOnInit() {
+    this.dogService.getBreeds()
+      .then((breeds: Breed[]) => {
+        this.breeds = breeds;
+      }).catch(error => {
+        console.log(error);
+      })
   }
 
 }
