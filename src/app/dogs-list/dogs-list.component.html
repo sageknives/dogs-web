@@ -1,6 +1,7 @@
 <app-layout>
-  <p>
-    dogs-list works!
-  </p>
-  <a routerLink="/dogs/12">view</a>
+  <mat-list>
+    <ng-template ngFor let-breed [ngForOf]="breeds" let-i="index">
+      <a mat-list-item [routerLink]="'/dogs/' + breed.id"> {{breed.name}} </a>
+    </ng-template>
+  </mat-list>
 </app-layout>
