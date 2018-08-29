@@ -1,7 +1,7 @@
 export class Breed {
   constructor(
     private name: string,
-    private subbreeds: string[]
+    private subBreeds: string[]
   ) { }
 
   public getName(): string {
@@ -12,15 +12,15 @@ export class Breed {
   }
 
   public addSubbreed(name: string): void {
-    this.subbreeds.push(name);
+    this.subBreeds.push(name);
   }
 
   public hasSubbreeds(): boolean {
-    return this.subbreeds.length > 0;
+    return this.subBreeds.length > 0;
   }
 
   public getSubbreeds(): string[] {
-    return this.subbreeds;
+    return this.subBreeds;
   }
   public static fromJSON(json: any): Breed {
     return new Breed(json.name, json.subbreeds);
