@@ -30,7 +30,7 @@ export class DogsService {
     });
   }
 
-  getBreedImage(name: string): Promise<string> {
+  public getBreedImage(name: string): Promise<string> {
     return new Promise((resolve, reject) => {
       this.http.get(`${this.apiURL}breed/${name}/images/random`)
         .subscribe(
