@@ -1,4 +1,4 @@
-<app-layout>
+<app-layout [backButton]="hasBackButton">
   <mat-nav-list>
     <ng-template ngFor let-breed [ngForOf]="breeds" let-i="index">
       <a mat-list-item [routerLink]="'/dogs/' + breed.name"> {{breed.name}} </a>

@@ -1,4 +1,4 @@
-<app-layout>
+<app-layout [backButton]="hasBackButton">
   <mat-card class="centered breed-card">
     <mat-card-header color="primary">
       <mat-card-title color="primary">{{ breed.subbreeds[0] | uppercase }} {{breed.name | uppercase}}</mat-card-title>

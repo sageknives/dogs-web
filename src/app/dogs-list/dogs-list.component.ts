@@ -10,11 +10,13 @@ import { Breed } from '../models/breed';
 export class DogsListComponent implements OnInit {
 
   private breeds: Breed[] = [];
+  private hasBackButton: boolean = false;
   constructor(
     private dogService: DogsService
   ) { }
 
   ngOnInit() {
+    this.hasBackButton = false;
     this.dogService.getBreeds()
       .then((breeds: Breed[]) => {
         this.breeds = breeds;

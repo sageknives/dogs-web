@@ -1,7 +1,11 @@
 <mat-drawer-container>
   <mat-drawer-content>
     <mat-toolbar color="primary">
-      <span class="centered">{{title}}</span>
+      <button *ngIf="backButton" mat-button (click)="gotoBreeds()">
+          <mat-icon>keyboard_arrow_left</mat-icon>
+          Breeds
+      </button>
+      <span class="full-centered">{{title}}</span>
     </mat-toolbar>
     <div fxLayout="row" fxLayoutAlign="center stretch">
       <div fxFlex.xs="100%" fxFlex.sm="100%" fxFlex.md="100%" fxFlex.lg="100%" fxFlex.xl="100%">

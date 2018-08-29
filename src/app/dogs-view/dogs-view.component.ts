@@ -12,12 +12,15 @@ export class DogsViewComponent implements OnInit {
 
   private breed: Breed = new Breed("", []);
   private imageURL: string = "";
+  private hasBackButton: boolean = true;
+
   constructor(
     private route: ActivatedRoute,
     private dogService: DogsService
   ) { }
 
   ngOnInit() {
+    this.hasBackButton = true;
     this.breed.setName(this.route.snapshot.paramMap.get('breed'));
     let subbreed = this.route.snapshot.paramMap.get('subbreed');
     if (subbreed) {

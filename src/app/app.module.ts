@@ -25,6 +25,9 @@ import { MatSidenavModule } from "@angular/material/sidenav"
 import { MatToolbarModule } from "@angular/material/toolbar"
 import { MatCardModule } from "@angular/material/card"
 import { MatListModule } from "@angular/material/list"
+import { RouteReuseStrategy } from '@angular/router';
+import { CustomReuseStrategy } from './core/custom-reuse-strategy';
+import { PreviousRouteService } from './core/previous.route.service';
 
 
 @NgModule({
@@ -47,7 +50,11 @@ import { MatListModule } from "@angular/material/list"
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [DogsService],
+  providers: [
+    DogsService,
+    PreviousRouteService,
+    {provide: RouteReuseStrategy, useClass: CustomReuseStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
