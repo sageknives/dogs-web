@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { DogsRoutingModule } from '../dogs-routing.module';
 import { DogsListComponent } from '../dogs-list/dogs-list.component';
 import { ActivatedRoute } from '@angular/router';
@@ -39,6 +40,7 @@ describe('DogsViewComponent', () => {
         MatIconModule,
         MatListModule,
         MatCardModule,
+        MatSnackBarModule,
         DogsRoutingModule,
         AppRoutingModule
       ],

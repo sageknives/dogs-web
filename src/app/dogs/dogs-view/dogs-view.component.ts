@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Breed } from '../../models/breed';
 import { DogsService } from '../../core/dogs.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-dogs-view',
@@ -17,7 +18,8 @@ export class DogsViewComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private dogService: DogsService
+    private dogService: DogsService,
+    public snackBar: MatSnackBar
   ) { }
 
   ngOnInit() {
@@ -25,7 +27,8 @@ export class DogsViewComponent implements OnInit {
       .then(() => {
         console.log("Dogs view setup")
       }).catch(error => {
-        console.log(error);
+        let name = this.subBreed ? this.subBreed + ' ' + this.breed : this.breed;
+        this.snackBar.open(`No Images found for ${name}.`, undefined, { verticalPosition: 'bottom', duration: 3000 });
       })
   }
 
@@ -40,6 +43,15 @@ export class DogsViewComponent implements OnInit {
           resolve();
         }).catch(reject);
     })
+  }
+
+  updatePicture(breed: string, subBreed?: string) {
+    this.setRandomPicture(breed, subBreed)
+      .then(() => {
+      }).catch(error => {
+        let name = this.subBreed ? this.subBreed + ' ' + this.breed : this.breed;
+        this.snackBar.open(`No Images found for ${name}.`, undefined, { verticalPosition: 'bottom', duration: 3000 });
+      })
   }
 
   public setRandomPicture(breed: string, subBreed?: string) {
