@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DogsService } from '../core/dogs.service';
-import { Breed } from '../models/breed';
+import { DogsService } from '../../core/dogs.service';
+import { Breed } from '../../models/breed';
 
 @Component({
   selector: 'app-dogs-list',
@@ -11,6 +11,7 @@ export class DogsListComponent implements OnInit {
 
   private breeds: Breed[] = [];
   private hasBackButton: boolean = false;
+  
   constructor(
     private dogService: DogsService
   ) { }
