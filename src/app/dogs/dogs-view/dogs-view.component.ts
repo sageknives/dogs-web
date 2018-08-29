@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Breed } from '../models/breed';
-import { DogsService } from '../core/dogs.service';
+import { Breed } from '../../models/breed';
+import { DogsService } from '../../core/dogs.service';
 
 @Component({
   selector: 'app-dogs-view',
