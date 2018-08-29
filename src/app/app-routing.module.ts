@@ -9,7 +9,11 @@ const routes: Routes = [
     component: DogsListComponent
   },
   {
-    path: "dogs/:id",
+    path: "dogs/:breed",
+    component: DogsViewComponent
+  },
+  {
+    path: "dogs/:breed/:subbreed",
     component: DogsViewComponent
   },
   {
@@ -28,7 +32,9 @@ const routes: Routes = [
     RouterModule
   ],
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes,{
+      scrollPositionRestoration: 'enabled'
+    })
   ]
 })
 export class AppRoutingModule { }

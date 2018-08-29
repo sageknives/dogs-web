@@ -1,7 +1,11 @@
-<app-layout>
-  <mat-list>
+<app-layout [backButton]="hasBackButton">
+  <mat-nav-list>
     <ng-template ngFor let-breed [ngForOf]="breeds" let-i="index">
-      <a mat-list-item [routerLink]="'/dogs/' + breed.id"> {{breed.name}} </a>
+      <a mat-list-item [routerLink]="'/dogs/' + breed.name"> {{breed.name}} </a>
+      <div *ngIf="breed.subbreeds.length > 0" class="subbreed">
+        <a mat-list-item [routerLink]="'/dogs/' + breed.name + '/' + sub" *ngFor="let sub of breed.subbreeds">-{{sub}}
+          </a>
+      </div>
     </ng-template>
-  </mat-list>
+  </mat-nav-list>
 </app-layout>
